@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.github.leonardo-couto</groupId>
+  <artifactId>nodejs-binaries</artifactId>
+  <version>0.10.28-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>nodejs-binaries</name>
+  <url>http://github.com/leonardo-couto/nodejs-binaries</url>
+
+  <properties>
+    <node.version>0.10.28</node.version>
+  </properties>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>com.googlecode.maven-download-plugin</groupId>
+        <artifactId>download-maven-plugin</artifactId>
+        <version>1.2.0</version>
+        <executions>
+          <execution>
+            <id>download-linux-x64</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+            <configuration>
+              <url>http://nodejs.org/dist/v${node.version}/node-v${node.version}-linux-x64.tar.gz</url>
+              <outputFileName>${project.build.finalName}-linux-x64.tar.gz</outputFileName>
+            </configuration>
+          </execution>
+          <execution>
+            <id>download-linux-x86</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>wget</goal>
+            </goals>
+            <configuration>
+              <url>http://nodejs.org/dist/v${node.version}/node-v${node.version}-linux-x86.tar.gz</url>
+              <outputFileName>${project.build.finalName}-linux-x86.tar.gz</outputFileName>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>1.8</version>
+        <executions>
+          <execution>
+            <id>attach-artifacts</id>
+            <phase>package</phase>
+            <goals>
+              <goal>attach-artifact</goal>
+            </goals>
+            <configuration>
+              <artifacts>
+                <artifact>
+                  <file>${project.build.directory}/${project.build.finalName}-linux-x64.tar.gz</file>
+                  <type>tar.gz</type>
+                  <classifier>linux-x64</classifier>
+                </artifact>
+                <artifact>
+                  <file>${project.build.directory}/${project.build.finalName}-linux-x86.tar.gz</file>
+                  <type>tar.gz</type>
+                  <classifier>linux-x86</classifier>
+                </artifact>
+              </artifacts>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+
+    </plugins>
+  </build>
+
+</project>
