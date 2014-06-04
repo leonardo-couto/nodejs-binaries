@@ -7,6 +7,12 @@
   <version>0.10.28-SNAPSHOT</version>
   <packaging>pom</packaging>
 
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>9</version>
+  </parent>
+
   <name>nodejs-binaries</name>
   <description>Node.js Binaries as a Maven dependency</description>
   <url>http://github.com/leonardo-couto/nodejs-binaries</url>
