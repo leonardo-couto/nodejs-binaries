@@ -8,11 +8,34 @@
   <packaging>pom</packaging>
 
   <name>nodejs-binaries</name>
+  <description>Node.js Binaries as a Maven dependency</description>
   <url>http://github.com/leonardo-couto/nodejs-binaries</url>
 
   <properties>
     <node.version>0.10.28</node.version>
   </properties>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:ssh://git@github.com/leonardo-couto/nodejs-binaries.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/leonardo-couto/nodejs-binaries.git</developerConnection>
+    <url>https://github.com/leonardo-couto/nodejs-binaries</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <developers>
+    <developer>
+      <name>Leonardo Couto</name>
+      <email>leonardo.couto@gmail.com</email>
+    </developer>
+  </developers>
 
   <build>
     <plugins>
@@ -76,6 +99,20 @@
         </executions>
       </plugin>
 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.5</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
 
     </plugins>
   </build>
