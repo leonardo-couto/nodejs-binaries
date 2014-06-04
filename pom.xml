@@ -3,7 +3,7 @@
 
   <groupId>com.github.leonardo-couto</groupId>
   <artifactId>nodejs-binaries</artifactId>
-  <version>0.10.28</version>
+  <version>0.10.29-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <parent>
