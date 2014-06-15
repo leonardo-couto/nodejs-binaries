@@ -5,7 +5,7 @@ Node.js Linux and MacOS binaries as a Maven dependency.
 
 **Usage**
 
-In your pom add the following properties and dependency.
+In your pom.xml add the following properties and dependency.
 
 ```xml
   <project>
@@ -30,7 +30,7 @@ In your pom add the following properties and dependency.
 ```
 Possible values supported for OS (*node.os*) are *linux* and *macos*. For architecture (*node.arch*) values *x86* and *x64* are valid.
 
-Typical usage let Maven choose the package based on user operational system and architecture through Maven profile activation.
+You can let Maven choose the package based on user operational system and architecture through Maven profile activation.
 
 ```xml
   <profiles>
