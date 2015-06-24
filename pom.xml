@@ -17,7 +17,7 @@
   <url>http://github.com/leonardo-couto/nodejs-binaries</url>
 
   <properties>
-    <node.version>0.10.28</node.version>
+    <node.version>0.12.5</node.version>
   </properties>
 
   <licenses>
