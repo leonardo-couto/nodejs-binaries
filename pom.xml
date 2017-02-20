@@ -17,7 +17,7 @@
   <url>http://github.com/leonardo-couto/nodejs-binaries</url>
 
   <properties>
-    <node.version>0.12.5</node.version>
+    <node.version>7.5.0</node.version>
   </properties>
 
   <licenses>
@@ -83,8 +83,8 @@
               <goal>wget</goal>
             </goals>
             <configuration>
-              <url>http://nodejs.org/dist/v${node.version}/node-v${node.version}-darwin-x86.tar.gz</url>
-              <outputFileName>${project.build.finalName}-macos-x86.tar.gz</outputFileName>
+              <url>http://nodejs.org/dist/v${node.version}/node-v${node.version}-darwin-x64.tar.gz</url>
+              <outputFileName>${project.build.finalName}-macos-x64.tar.gz</outputFileName>
             </configuration>
           </execution>
           <execution>
@@ -130,7 +130,7 @@
                   <classifier>macos-x64</classifier>
                 </artifact>
                 <artifact>
-                  <file>${project.build.directory}/${project.build.finalName}-macos-x86.tar.gz</file>
+                  <file>${project.build.directory}/${project.build.finalName}-macos-x64.tar.gz</file>
                   <type>tar.gz</type>
                   <classifier>macos-x86</classifier>
                 </artifact>
