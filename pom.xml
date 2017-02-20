@@ -3,7 +3,7 @@
 
   <groupId>com.github.leonardo-couto</groupId>
   <artifactId>nodejs-binaries</artifactId>
-  <version>7.5.0</version>
+  <version>7.5.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>nodejs-binaries</name>
   <description>Node.js Binaries as a Maven dependency</description>
@@ -36,7 +36,7 @@
     <connection>scm:git:ssh://git@github.com/leonardo-couto/nodejs-binaries.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/leonardo-couto/nodejs-binaries.git</developerConnection>
     <url>https://github.com/leonardo-couto/nodejs-binaries</url>
-    <tag>nodejs-binaries-7.5.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <developers>
