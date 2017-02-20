@@ -3,7 +3,7 @@
 
   <groupId>com.github.leonardo-couto</groupId>
   <artifactId>nodejs-binaries</artifactId>
-  <version>0.12.6-SNAPSHOT</version>
+  <version>7.5.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <parent>
@@ -66,28 +66,6 @@
             </configuration>
           </execution>
           <execution>
-            <id>download-linux-x86</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>wget</goal>
-            </goals>
-            <configuration>
-              <url>http://nodejs.org/dist/v${node.version}/node-v${node.version}-linux-x86.tar.gz</url>
-              <outputFileName>${project.build.finalName}-linux-x86.tar.gz</outputFileName>
-            </configuration>
-          </execution>
-          <execution>
-            <id>download-macos-x86</id>
-            <phase>generate-resources</phase>
-            <goals>
-              <goal>wget</goal>
-            </goals>
-            <configuration>
-              <url>http://nodejs.org/dist/v${node.version}/node-v${node.version}-darwin-x64.tar.gz</url>
-              <outputFileName>${project.build.finalName}-macos-x64.tar.gz</outputFileName>
-            </configuration>
-          </execution>
-          <execution>
             <id>download-macos-x64</id>
             <phase>generate-resources</phase>
             <goals>
@@ -120,19 +98,9 @@
                   <classifier>linux-x64</classifier>
                 </artifact>
                 <artifact>
-                  <file>${project.build.directory}/${project.build.finalName}-linux-x86.tar.gz</file>
-                  <type>tar.gz</type>
-                  <classifier>linux-x86</classifier>
-                </artifact>
-                <artifact>
                   <file>${project.build.directory}/${project.build.finalName}-macos-x64.tar.gz</file>
                   <type>tar.gz</type>
                   <classifier>macos-x64</classifier>
-                </artifact>
-                <artifact>
-                  <file>${project.build.directory}/${project.build.finalName}-macos-x64.tar.gz</file>
-                  <type>tar.gz</type>
-                  <classifier>macos-x86</classifier>
                 </artifact>
               </artifacts>
             </configuration>
